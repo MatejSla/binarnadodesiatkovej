@@ -1,16 +1,11 @@
-# This is a sample Python script.
+cislo = int(input("Zadaj číslo v dvojkovej sústave: "))
+desiatkove_cislo = 0
+exponent = 0
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+while cislo > 0:
+    posledna_cifra = cislo % 10
+    desiatkove_cislo += posledna_cifra * (2 ** exponent)
+    cislo = cislo // 10
+    exponent += 1
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print("Číslo v desiatkovej sústave:", desiatkove_cislo)
